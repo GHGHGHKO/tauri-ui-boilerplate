@@ -28,7 +28,9 @@ export default function MusicPage() {
 
   useEffect(() => {
     // inspect console: Hello, World! You've been greeted from Rust!
-    invoke("greet", { name: "World" }).then(console.log).catch(console.error)
+    invoke("greet", { name: "World" })
+    .then((msg) => setGreetMsg(msg as string))
+    .catch(console.error)
   })
 
   return (
@@ -128,6 +130,9 @@ export default function MusicPage() {
                         </h2>
                         <p className="text-sm text-muted-foreground">
                           Your favorite podcasts. Updated daily.
+                          <div>
+                            <pre>{greetMsg}</pre>
+                          </div>
                         </p>
                       </div>
                     </div>
