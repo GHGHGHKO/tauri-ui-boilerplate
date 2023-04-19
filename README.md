@@ -1,23 +1,25 @@
-![tauri-ui-boilerplate](https://user-images.githubusercontent.com/16024979/232614671-c83f72ee-82f1-4877-8236-13a732764ec6.png)
+![tauri-ui](https://user-images.githubusercontent.com/16024979/232823230-19d22434-8e28-43c2-bb70-e45a2fc2da88.gif)
 
-# Tauri 2 + Next.js 13 + shadcn/ui
+# Tauri UI Template
 
-[Tauri](https://github.com/tauri-apps/tauri) boilerplate with [Next.js 13](https://beta.nextjs.org/docs) and [shadcn/ui](https://github.com/shadcn/ui).
+Tauri UI Template is a starting point for building modern desktop applications with web technologies. Customizable UI components with [shadcn/ui](https://github.com/shadcn/ui), a lightweight and secure desktop app framework [Tauri 2](https://github.com/tauri-apps/tauri), the React-based framework [Next.js 13](https://beta.nextjs.org/docs), the utility-first CSS framework [Tailwind](https://tailwindcss.com/).
 
-- Tauri
-- Next.js 13
-- shadcn/ui
-- Radix UI
-- TypeScript
-- Tailwind
-- Lucide Icons
-- [Bundle size optimized](https://github.com/johnthagen/min-sized-rust) [`Cargo.toml`](/src-tauri/Cargo.toml) (.msi 2mb)
+- Support for dark and light modes
+- Components-based UI design
+- A draggable titlebar with minimize, maximize, and close buttons
+- Interfacing with Rust backend code for more complex logic
+- [Radix UI](https://www.radix-ui.com/) for UI primitives
+- [TypeScript](https://www.typescriptlang.org/)
+- [Lucide Icons](https://lucide.dev/)
+- [Bundle size optimized](https://github.com/johnthagen/min-sized-rust) [`Cargo.toml`](/src-tauri/Cargo.toml) (.exe 3mb, .msi 2mb)
+
+> _You can download pre-built final bundles from the [Releases](https://github.com/agmmnn/tauri-ui/releases) section._
 
 ## Getting Started
 
 ```
-gh repo clone agmmnn/tauri-ui-boilerplate
-cd tauri-ui-boilerplate
+gh repo clone agmmnn/tauri-ui
+cd tauri-ui
 pnpm i
 ```
 
@@ -25,6 +27,18 @@ pnpm i
 pnpm tauri dev
 pnpm tauri build
 ```
+
+## Customization
+
+The template can be customized by editing the following files:
+
+- [package.json](/package.json)
+- [src-tauri/tauri.conf.json](src-tauri/tauri.conf.json)
+- To change the app icon, update `app-icon.png`, and then run `pnpm tauri icon`. This will automatically generate icon files into _src-tauri/icons_.
+
+## Update Components
+
+Note that **shadcn/ui** [is not a library](https://ui.shadcn.com/docs#faqs), therefore you will need to update the components manually. To do so, you can [download](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui%2Ftree%2Fmain%2Fapps%2Fwww%2Fcomponents%2Fui) the _[shadcn/ui/apps/www/components/ui](https://github.com/shadcn/ui/tree/main/apps/www/components/ui)_ directory and paste it into _[src/components/ui](/src/components/ui)_.
 
 ## To-Do
 
@@ -35,16 +49,6 @@ pnpm tauri build
 - [x] Dark-Light mode switch.
 - [x] Get simple data from the Rust backend code.
 
-## Customization
-
-- [package.json](/package.json)
-- [src-tauri/tauri.conf.json](src-tauri/tauri.conf.json)
-- Update `app-icon.png`, run `pnpm tauri icon`. This will automatically generate icon files into src-tauri/icons.
-
-## Update Components
-
-shadcn/ui [is not a library](https://ui.shadcn.com/docs#faqs). So you need to update components by hand. You can [download](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui%2Ftree%2Fmain%2Fapps%2Fwww%2Fcomponents%2Fui) the [shadcn/ui/apps/www/components/ui](https://github.com/shadcn/ui/tree/main/apps/www/components/ui) directory and paste it into [src/components/ui](/src/components/ui).
-
 ## Folder Structure
 
 ```js
@@ -54,23 +58,26 @@ shadcn/ui [is not a library](https://ui.shadcn.com/docs#faqs). So you need to up
 ├── package.json
 ├── postcss.config.js
 ├── README.md
+├── public
 ├── src               //frontend src:
-│   ├── app           //next.js app dir https://beta.nextjs.org/docs/routing/fundamentals
+│   ├── app           //next.js appdir https://beta.nextjs.org/docs/routing/fundamentals
 │   ├── assets
 │   ├── components    //from shadcn/ui
-│   │   └── ui        //from shadcn/ui
+│   │   └── ui
+│   ├── data
+│   ├── hooks
 │   ├── lib
-│   ├── styles
-│   └── types
+│   └── styles
 ├── src-tauri         //backend src:
 │   ├── build.rs
 │   ├── Cargo.lock
 │   ├── Cargo.toml    //https://doc.rust-lang.org/cargo/reference/manifest.html
 │   ├── icons         //https://tauri.app/v1/guides/features/icons/
 │   ├── src           //rust codes
-│   └── tauri.conf.json    //tauri config file https://tauri.app/v1/api/config/
-├── tailwind.config.js     //tailwind config file
-└── tsconfig.json          //typescript config file
+│   └── tauri.conf.json  //tauri config file https://next--tauri.netlify.app/next/api/config
+├── prettier.config.js     //prettier config file https://prettier.io/docs/en/configuration.html
+├── tailwind.config.js     //tailwind config file https://tailwindcss.com/docs/configuration
+└── tsconfig.json          //typescript config file https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 ```
 
 ## Recommended IDE Setup

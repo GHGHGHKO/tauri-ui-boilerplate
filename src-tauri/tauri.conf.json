@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "tauri-ui-boilerplate",
+    "productName": "tauri-ui",
     "version": "0.1.0"
   },
   "tauri": {
@@ -61,7 +61,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "title": "Music Tauri",
+        "title": "Tauri UI",
         "center": true,
         "resizable": true,
         "decorations": false,

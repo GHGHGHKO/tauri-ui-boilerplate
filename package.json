@@ -1,11 +1,11 @@
 {
-  "name": "tauri-ui-boilerplate",
+  "name": "tauri-ui",
   "private": true,
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "scripts": {
     "dev": "next dev -p 1420",
-    "build": "next build && next export",
+    "build": "next build",
     "tauri": "tauri",
     "taze": "taze major -I"
   },
@@ -43,12 +43,16 @@
     "class-variance-authority": "^0.5.2",
     "clsx": "^1.2.1",
     "cmdk": "^0.2.0",
-    "lucide-react": "^0.161.0",
+    "date-fns": "^2.29.3",
+    "lucide-react": "^0.162.0",
     "nanoid": "^4.0.2",
-    "next": "^13.3.1-canary.10",
+    "next": "^13.3.1-canary.14",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
+    "react-day-picker": "^8.7.1",
     "react-dom": "^18.2.0",
+    "react-wrap-balancer": "^0.4.0",
+    "recharts": "^2.5.0",
     "tailwind-merge": "^1.12.0",
     "tailwindcss-animate": "^1.0.5"
   },
@@ -61,6 +65,7 @@
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.22",
     "prettier": "^2.8.7",
+    "tailwind-scrollbar": "^3.0.0",
     "tailwindcss": "^3.3.1",
     "taze": "^0.9.1",
     "typescript": "^5.0.4"

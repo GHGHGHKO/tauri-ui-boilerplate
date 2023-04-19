@@ -1,40 +1,44 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
 
-import { fontSans } from "@/lib/fonts"
+import { fontMono, fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
+import { Greeting } from "@/components/greeting"
+import { Menu } from "@/components/menu"
+import { StyleSwitcher } from "@/components/style-switcher"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-
-import "./styles.css"
 
 export default function MyApp({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={cn(
-          "bg-transparent font-sans antialiased",
-          fontSans.variable
-        )}
+        className={cn("bg-transparent font-sans antialiased scrollbar-none")}
       >
+        <Greeting />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div
-            data-section="music"
-            className="hidden md:block overflow-hidden h-screen rounded-lg border border-slate-600  dark:border-blue-900"
-          >
-            {children}
+          <div className="overflow-clip h-screen rounded-lg border border-slate-600  dark:border-blue-900">
+            <Menu />
+            <div
+              className={cn(
+                "overflow-auto h-screen pb-8 border-t bg-background",
+                "scrollbar-none"
+                // "scrollbar scrollbar-track-rounded-lg scrollbar-thumb-rounded-lg scrollbar-thumb-gray-900 scrollbar-track-gray-100"
+              )}
+            >
+              {children}
+            </div>
           </div>
           <TailwindIndicator />
         </ThemeProvider>
+        <StyleSwitcher />
       </body>
     </html>
   )
 }
 
 export const metadata: Metadata = {
-  title: "Music App",
-  description: "Example music app using the components.",
   icons: {
     shortcut: ["#"],
   },
