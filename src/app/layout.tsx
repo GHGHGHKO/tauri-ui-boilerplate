@@ -7,7 +7,6 @@ import { Menu } from "@/components/menu"
 import { StyleSwitcher } from "@/components/style-switcher"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import {Tenor} from "@/components/tenor-client";
 
 export default function MyApp({ children }) {
   return (
@@ -17,7 +16,6 @@ export default function MyApp({ children }) {
         className={cn("bg-transparent font-sans antialiased scrollbar-none")}
       >
         <Greeting />
-        <Tenor />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="overflow-clip h-screen rounded-lg border border-slate-600  dark:border-blue-900">
             <Menu />

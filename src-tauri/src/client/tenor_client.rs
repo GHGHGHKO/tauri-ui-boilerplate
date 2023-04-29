@@ -2,9 +2,9 @@ use crate::dto::tenor_response::TenorResults;
 use std::env;
 
 #[tauri::command]
-pub async fn tenor_request(search: &str) -> Result<TenorResults, String> {
+pub async fn tenor_request(search: &str, key: &str) -> Result<TenorResults, String> {
     let tenor_key = env::var("TENOR_API_KEY")
-        .unwrap_or_else(|_| String::from("<default_api_key>"));
+        .unwrap_or_else(|_| String::from(key));
 
     let url = format!(
         "https://tenor.googleapis.com/v2/search?q={}&key={}&limit={}&random=true",

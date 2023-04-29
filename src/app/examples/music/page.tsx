@@ -5,18 +5,17 @@ import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { AlbumArtwork } from "./components/album-artwork"
-import { Menu } from "./components/menu"
 import { PodcastEmptyPlaceholder } from "./components/podcast-empty-placeholder"
 import { Sidebar } from "./components/sidebar"
-import { listenNowAlbums, madeForYouAlbums } from "./data/albums"
+import { madeForYouAlbums } from "./data/albums"
 import { tinyGifs } from "./data/tenor-gifs"
 import { playlists } from "./data/playlists"
 import "./styles.css"
-import Image from "next/image"
 import { PlusCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {GifTenor} from "@/app/examples/music/components/gif-tenor";
+import {Tenor} from "@/components/tenor-client";
 
 export const metadata: Metadata = {
   title: "Music App",
@@ -64,6 +63,8 @@ export default function MusicPage() {
                       </p>
                     </div>
                   </div>
+                  <Separator className="my-4" />
+                  <Tenor />
                   <Separator className="my-4" />
                   <div className="relative">
                     <ScrollArea>
