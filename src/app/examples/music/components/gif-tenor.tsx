@@ -24,7 +24,7 @@ import {useState} from "react";
 import {Simulate} from "react-dom/test-utils";
 import error = Simulate.error;
 
-interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
+interface GifTenorProps extends React.HTMLAttributes<HTMLDivElement> {
   tenorGif: TenorGif
   aspectRatio?: "portrait" | "square"
   width?: number
@@ -38,7 +38,7 @@ export function GifTenor({
   height,
   className,
   ...props
-}: AlbumArtworkProps) {
+}: GifTenorProps) {
   const [isCopied, setIsCopied] = useState(false);
   const handleCopy = () => {
     setIsCopied(true)
