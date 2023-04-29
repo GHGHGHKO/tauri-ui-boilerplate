@@ -9,12 +9,14 @@ import { Menu } from "./components/menu"
 import { PodcastEmptyPlaceholder } from "./components/podcast-empty-placeholder"
 import { Sidebar } from "./components/sidebar"
 import { listenNowAlbums, madeForYouAlbums } from "./data/albums"
+import { tinyGifs } from "./data/tenor-gifs"
 import { playlists } from "./data/playlists"
 import "./styles.css"
 import Image from "next/image"
 import { PlusCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import {GifTenor} from "@/app/examples/music/components/gif-tenor";
 
 export const metadata: Metadata = {
   title: "Music App",
@@ -66,10 +68,10 @@ export default function MusicPage() {
                   <div className="relative">
                     <ScrollArea>
                       <div className="flex space-x-4 pb-4">
-                        {listenNowAlbums.map((album) => (
-                          <AlbumArtwork
-                            key={album.name}
-                            album={album}
+                        {tinyGifs.map((gif) => (
+                          <GifTenor
+                            key={gif.url}
+                            tenorGif={gif}
                             className="w-[250px]"
                             aspectRatio="portrait"
                             width={250}
