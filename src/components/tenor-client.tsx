@@ -39,10 +39,11 @@ export function Tenor() {
         </CardHeader>
         <CardContent className="grid gap-4 p-1.5">
           <div className="grid gap-2">
-            <Label htmlFor="email">Let's toss some meme keywords, folks!</Label>
-            <Input id="email" type="email" placeholder="Fimally!"
+            <Label htmlFor="search">Let's toss some meme keywords, folks!</Label>
+            <Input id="search" type="text" placeholder="Fimally!"
                    onChange={(e) => setSearch(e.target.value)} />
-          </div>          <div className="grid gap-2">
+          </div>
+          <div className="grid gap-2">
             <Label htmlFor="password">Where might my key be hiding, Gustaf?</Label>
             <Input id="password" type="password" placeholder="xxxxxxACSKexUfqoKqSQxxxxxxh63zdC25ubpuA"
                    onChange={(e) => setKey(e.target.value)} />
