@@ -1,18 +1,18 @@
-export interface TenorGif {
-  url: string
+export interface TenorResults {
+  results: Results[];
 }
 
-export const tinyGifs: TenorGif[] = [
-  {
-    url: "https://media.tenor.com/4Xy3djxEjGEAAAAM/pepe-meme.gif"
-  },
-  {
-    url: "https://media.tenor.com/bpzxOpYlmJwAAAAM/pepe-pepe-laugh.gif"
-  },
-  {
-    url: "https://media.tenor.com/1-_3JfrWHR0AAAAM/_frenhooo-_hooo.gif"
-  },
-  {
-    url: "https://media.tenor.com/Q_6uPSSB2fYAAAAM/pepe-jam-jam12323.gif"
-  },
-]
+export interface Results {
+  media_formats: MediaFormats;
+}
+
+export interface MediaFormats {
+  tinygif: GifFields;
+}
+
+export interface GifFields {
+  url: string;
+  duration: number;
+  dims: [number, number];
+  size: number;
+}

@@ -8,13 +8,11 @@ import { AlbumArtwork } from "./components/album-artwork"
 import { PodcastEmptyPlaceholder } from "./components/podcast-empty-placeholder"
 import { Sidebar } from "./components/sidebar"
 import { madeForYouAlbums } from "./data/albums"
-import { tinyGifs } from "./data/tenor-gifs"
 import { playlists } from "./data/playlists"
 import "./styles.css"
 import { PlusCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import {GifTenor} from "@/app/examples/music/components/gif-tenor";
 import {Tenor} from "@/components/tenor-client";
 
 export const metadata: Metadata = {
@@ -65,24 +63,6 @@ export default function MusicPage() {
                   </div>
                   <Separator className="my-4" />
                   <Tenor />
-                  <Separator className="my-4" />
-                  <div className="relative">
-                    <ScrollArea>
-                      <div className="flex space-x-4 pb-4">
-                        {tinyGifs.map((gif) => (
-                          <GifTenor
-                            key={gif.url}
-                            tenorGif={gif}
-                            className="w-[250px]"
-                            aspectRatio="portrait"
-                            width={250}
-                            height={330}
-                          />
-                        ))}
-                      </div>
-                      <ScrollBar orientation="horizontal" />
-                    </ScrollArea>
-                  </div>
                   <div className="mt-6 space-y-1">
                     <h2 className="text-2xl font-semibold tracking-tight">
                       Made for You

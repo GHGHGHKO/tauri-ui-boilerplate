@@ -15,17 +15,15 @@ import {
   ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 
-import { TenorGif } from "../data/tenor-gifs"
 import { playlists } from "../data/playlists"
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import {useState} from "react";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
+import {GifFields} from "@/app/examples/music/data/tenor-gifs";
 
 interface GifTenorProps extends React.HTMLAttributes<HTMLDivElement> {
-  tenorGif: TenorGif
+  tenorGif: GifFields
   aspectRatio?: "portrait" | "square"
   width?: number
   height?: number

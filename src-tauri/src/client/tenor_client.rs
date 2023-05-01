@@ -8,7 +8,7 @@ pub async fn tenor_request(search: &str, key: &str) -> Result<TenorResults, Stri
 
     let url = format!(
         "https://tenor.googleapis.com/v2/search?q={}&key={}&limit={}&random=true",
-        search, tenor_key, 3
+        search, tenor_key, 4
     );
 
     let response = reqwest::get(url);
