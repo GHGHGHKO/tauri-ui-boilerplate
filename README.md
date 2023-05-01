@@ -1,3 +1,7 @@
+# Tenor UI GIF
+![tauri-memes](https://user-images.githubusercontent.com/26823834/235416698-cb27aa4c-ae13-40d0-81f7-13708be853bf.gif)
+
+# Original UI GIF
 ![tauri-ui](https://user-images.githubusercontent.com/16024979/232823230-19d22434-8e28-43c2-bb70-e45a2fc2da88.gif)
 
 # Tauri UI Template
