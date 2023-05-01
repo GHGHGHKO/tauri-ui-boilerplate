@@ -1,4 +1,5 @@
 # Tenor UI GIF
+### You must obtain a Tenor API key. Please [check out this link](https://developers.google.com/tenor/guides/quickstart#setup) to learn how to get one.
 ![tauri-memes](https://user-images.githubusercontent.com/26823834/235416698-cb27aa4c-ae13-40d0-81f7-13708be853bf.gif)
 
 # Original UI GIF
