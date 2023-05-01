@@ -1,13 +1,10 @@
 import { Metadata } from "next"
 
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-import { AlbumArtwork } from "./components/album-artwork"
 import { PodcastEmptyPlaceholder } from "./components/podcast-empty-placeholder"
 import { Sidebar } from "./components/sidebar"
-import { madeForYouAlbums } from "./data/albums"
 import { playlists } from "./data/playlists"
 import "./styles.css"
 import { PlusCircle } from "lucide-react"
@@ -33,7 +30,7 @@ export default function MusicPage() {
                 <div className="space-between flex items-center">
                   <TabsList>
                     <TabsTrigger value="music" className="relative">
-                      Music
+                      Tenor
                     </TabsTrigger>
                     <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
                     <TabsTrigger value="live" disabled>
@@ -63,32 +60,6 @@ export default function MusicPage() {
                   </div>
                   <Separator className="my-4" />
                   <Tenor />
-                  <div className="mt-6 space-y-1">
-                    <h2 className="text-2xl font-semibold tracking-tight">
-                      Made for You
-                    </h2>
-                    <p className="text-sm text-muted-foreground">
-                      Your personal playlists. Updated daily.
-                    </p>
-                  </div>
-                  <Separator className="my-4" />
-                  <div className="relative">
-                    <ScrollArea>
-                      <div className="flex space-x-4 pb-4">
-                        {madeForYouAlbums.map((album) => (
-                          <AlbumArtwork
-                            key={album.name}
-                            album={album}
-                            className="w-[150px]"
-                            aspectRatio="square"
-                            width={150}
-                            height={150}
-                          />
-                        ))}
-                      </div>
-                      <ScrollBar orientation="horizontal" />
-                    </ScrollArea>
-                  </div>
                 </TabsContent>
                 <TabsContent
                   value="podcasts"
@@ -100,7 +71,7 @@ export default function MusicPage() {
                         New Episodes
                       </h2>
                       <p className="text-sm text-muted-foreground">
-                        Your favorite podcasts. Updated daily.
+                        Planning on another meme site
                       </p>
                     </div>
                   </div>
