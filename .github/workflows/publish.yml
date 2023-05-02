@@ -1,6 +1,10 @@
 name: "release"
 on:
   workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Enter tag name ex)v0.1.0'
+        required: true
 
 jobs:
   create-release:
@@ -26,7 +30,7 @@ jobs:
             const { data } = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              tag_name: `${process.env.PACKAGE_VERSION}`,
+              tag_name: ${{ github.event.inputs.tag_name }},
               name: `v${process.env.PACKAGE_VERSION}`,
               body: '*This release was generated automatically using GitHub Actions.*',
               draft: true,
