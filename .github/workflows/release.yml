@@ -12,7 +12,7 @@ jobs:
       contents: write
     runs-on: ubuntu-20.04
     outputs:
-      release_id: ${{ steps.create-release.outputs.result }}
+      release_id: ${{ github.event.inputs.tag_name }}
 
     steps:
       - uses: actions/checkout@v3
@@ -31,7 +31,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               tag_name: `${{ github.event.inputs.tag_name }}`,
-              name: `v${process.env.PACKAGE_VERSION}`,
+              name: `${{ github.event.inputs.tag_name }}`,
               body: '*This release was generated automatically using GitHub Actions.*',
               draft: true,
               prerelease: false
