@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "Example music app using the components.",
 }
 
-export default function MusicPage() {
+export default function TenorPage() {
   return (
     <div>
       {/* <Menu /> */}
@@ -28,35 +28,35 @@ export default function MusicPage() {
           <Sidebar gifs={gifsList} className="hidden lg:block" />
           <div className="col-span-3 lg:col-span-4 lg:border-l">
             <div className="h-full px-4 py-6 lg:px-8">
-              <Tabs defaultValue="music" className="h-full space-y-6">
+              <Tabs defaultValue="tenor" className="h-full space-y-6">
                 <div className="space-between flex items-center">
                   <TabsList>
-                    <TabsTrigger value="music" className="relative">
-                      Music
+                    <TabsTrigger value="tenor" className="relative">
+                      Tenor Gifs
                     </TabsTrigger>
-                    <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
+                    <TabsTrigger value="podcasts">Coming soon</TabsTrigger>
                     <TabsTrigger value="live" disabled>
-                      Live
+                      Coming soon
                     </TabsTrigger>
                   </TabsList>
                   <div className="ml-auto mr-4">
                     <Button>
                       <PlusCircle className="mr-2 h-4 w-4" />
-                      Add music
+                      Hey
                     </Button>
                   </div>
                 </div>
                 <TabsContent
-                  value="music"
+                  value="tenor"
                   className="border-none p-0 outline-none"
                 >
                   <div className="flex items-center justify-between">
                     <div className="space-y-1">
                       <h2 className="text-2xl font-semibold tracking-tight">
-                        Listen Now
+                        Get memes
                       </h2>
                       <p className="text-sm text-muted-foreground">
-                        Top picks for you. Updated daily.
+                        Enter your Tenor Key and keyword
                       </p>
                     </div>
                   </div>
