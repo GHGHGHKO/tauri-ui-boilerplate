@@ -63,19 +63,19 @@ export default function MusicPage() {
                   <Separator className="my-4" />
                   <div className="relative">
                     <ScrollArea>
-                      <div className="flex space-x-4 pb-4">
+                      <div className="flex flex-wrap gap-x-4 pb-4">
                         {listenNowAlbums.map((album) => (
-                          <AlbumArtwork
-                            key={album.name}
-                            album={album}
-                            className="w-[250px]"
-                            aspectRatio="portrait"
-                            width={250}
-                            height={330}
-                          />
+                            <AlbumArtwork
+                                key={album.name}
+                                album={album}
+                                className="w-[250px] my-4"
+                                aspectRatio="portrait"
+                                width={250}
+                                height={330}
+                            />
                         ))}
                       </div>
-                      <ScrollBar orientation="horizontal" />
+                      <ScrollBar orientation="vertical" />
                     </ScrollArea>
                   </div>
                 </TabsContent>
