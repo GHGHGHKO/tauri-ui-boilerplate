@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AlbumArtwork } from "./components/album-artwork"
 import { PodcastEmptyPlaceholder } from "./components/podcast-empty-placeholder"
 import { Sidebar } from "./components/sidebar"
-import { listenNowAlbums, madeForYouAlbums } from "./data/albums"
+import { listenNowAlbums } from "./data/albums"
 import { gifsList } from "./data/gifs-list"
 import "./styles.css"
 import { PlusCircle } from "lucide-react"
@@ -72,32 +72,6 @@ export default function MusicPage() {
                             aspectRatio="portrait"
                             width={250}
                             height={330}
-                          />
-                        ))}
-                      </div>
-                      <ScrollBar orientation="horizontal" />
-                    </ScrollArea>
-                  </div>
-                  <div className="mt-6 space-y-1">
-                    <h2 className="text-2xl font-semibold tracking-tight">
-                      Made for You
-                    </h2>
-                    <p className="text-sm text-muted-foreground">
-                      Your personal playlists. Updated daily.
-                    </p>
-                  </div>
-                  <Separator className="my-4" />
-                  <div className="relative">
-                    <ScrollArea>
-                      <div className="flex space-x-4 pb-4">
-                        {madeForYouAlbums.map((album) => (
-                          <AlbumArtwork
-                            key={album.name}
-                            album={album}
-                            className="w-[150px]"
-                            aspectRatio="square"
-                            width={150}
-                            height={150}
                           />
                         ))}
                       </div>
