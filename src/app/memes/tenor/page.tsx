@@ -5,13 +5,11 @@ import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { AlbumArtwork } from "./components/album-artwork"
-import { Menu } from "./components/menu"
 import { PodcastEmptyPlaceholder } from "./components/podcast-empty-placeholder"
 import { Sidebar } from "./components/sidebar"
 import { listenNowAlbums, madeForYouAlbums } from "./data/albums"
-import { playlists } from "./data/playlists"
+import { gifsList } from "./data/gifs-list"
 import "./styles.css"
-import Image from "next/image"
 import { PlusCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -27,7 +25,7 @@ export default function MusicPage() {
       {/* <Menu /> */}
       <div className="bg-background">
         <div className="grid lg:grid-cols-5">
-          <Sidebar playlists={playlists} className="hidden lg:block" />
+          <Sidebar gifs={gifsList} className="hidden lg:block" />
           <div className="col-span-3 lg:col-span-4 lg:border-l">
             <div className="h-full px-4 py-6 lg:px-8">
               <Tabs defaultValue="music" className="h-full space-y-6">

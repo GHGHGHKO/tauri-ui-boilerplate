@@ -2,7 +2,6 @@ import Image from "next/image"
 import { ListMusic, PlusCircle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { AspectRatio } from "@/components/ui/aspect-ratio"
 import {
   ContextMenu,
   ContextMenuContent,
@@ -15,7 +14,7 @@ import {
 } from "@/components/ui/context-menu"
 
 import { Album } from "../data/albums"
-import { playlists } from "../data/playlists"
+import { gifsList } from "../data/gifs-list"
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
   album: Album
@@ -59,7 +58,7 @@ export function AlbumArtwork({
                 New Playlist
               </ContextMenuItem>
               <ContextMenuSeparator />
-              {playlists.map((playlist) => (
+              {gifsList.map((playlist) => (
                 <ContextMenuItem key={playlist}>
                   <ListMusic className="mr-2 h-4 w-4" /> {playlist}
                 </ContextMenuItem>
