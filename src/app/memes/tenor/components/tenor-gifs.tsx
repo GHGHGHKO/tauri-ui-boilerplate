@@ -18,6 +18,7 @@ import { GifFields } from "@/app/memes/tenor/data/tenor-fields";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { saveAs } from "file-saver";
 
 interface TenorGifsProps extends React.HTMLAttributes<HTMLDivElement> {
   gifFields: GifFields
@@ -38,6 +39,11 @@ export function TenorGifs({
   const handleCopy = () => {
     setIsCopied(true)
   };
+
+  const handleClick = (url: string) => {
+    const fileName = url.split('/').pop();
+    saveAs(url, fileName);
+  }
   return (
     <div className={cn("space-y-3", className)} {...props}>
       <ContextMenu>
@@ -82,7 +88,9 @@ export function TenorGifs({
         </ContextMenuContent>
       </ContextMenu>
       <div className="flex space-x-2">
-        <input value={gifFields.url} readOnly/>
+        <Button onClick={() => handleClick(gifFields.url)} variant="secondary" className="shrink-0">
+          Download Gif
+        </Button>
         <CopyToClipboard text={gifFields.url} onCopy={handleCopy}>
           <Button onClick={handleCopy} variant="secondary" className="shrink-0">
             Copy Link
