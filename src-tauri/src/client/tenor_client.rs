@@ -2,12 +2,12 @@ use reqwest::StatusCode;
 use crate::dto::tenor_response::TenorResults;
 
 #[tauri::command]
-pub async fn tenor_call(query: &str, api_key: &str, limit: u32)
+pub async fn tenor_call(query: &str, key: &str, limit: &str)
     -> Result<TenorResults, String> {
     let url = format!(
-        "https://tenor.googleapis.com/v2/search?random=true&q={query}&key={api_key}&limit={limit}",
+        "https://tenor.googleapis.com/v2/search?random=true&q={query}&key={key}&limit={limit}",
         query = query,
-        api_key = api_key,
+        key = key,
         limit = limit
     );
 

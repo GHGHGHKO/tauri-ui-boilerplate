@@ -1,18 +1,16 @@
 import { Metadata } from "next"
 
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-import { AlbumArtwork } from "./components/album-artwork"
 import { PodcastEmptyPlaceholder } from "./components/podcast-empty-placeholder"
 import { Sidebar } from "./components/sidebar"
-import { listenNowAlbums } from "./data/albums"
 import { gifsList } from "./data/gifs-list"
 import "./styles.css"
 import { PlusCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import {Tenor} from "@/app/memes/tenor/components/tenor-client";
 
 export const metadata: Metadata = {
   title: "Music App",
@@ -61,23 +59,7 @@ export default function TenorPage() {
                     </div>
                   </div>
                   <Separator className="my-4" />
-                  <div className="relative">
-                    <ScrollArea>
-                      <div className="flex flex-wrap gap-x-4 pb-4">
-                        {listenNowAlbums.map((album) => (
-                            <AlbumArtwork
-                                key={album.name}
-                                album={album}
-                                className="w-[250px] my-4"
-                                aspectRatio="portrait"
-                                width={250}
-                                height={330}
-                            />
-                        ))}
-                      </div>
-                      <ScrollBar orientation="vertical" />
-                    </ScrollArea>
-                  </div>
+                  <Tenor />
                 </TabsContent>
                 <TabsContent
                   value="podcasts"
