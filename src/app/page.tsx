@@ -1,5 +1,5 @@
-import MusicPage from "./examples/music/page"
+import TenorPage from "@/app/memes/tenor/page";
 
 export default function App() {
-  return <MusicPage />
+  return <TenorPage />
 }
