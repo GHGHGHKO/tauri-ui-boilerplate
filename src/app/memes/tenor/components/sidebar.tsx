@@ -1,5 +1,6 @@
 import {
-  CloudIcon,
+  AlertCircleIcon,
+  CloudIcon, Code, FileText, LayoutTemplateIcon,
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -16,6 +17,49 @@ export function Sidebar({ className, gifs }: SidebarProps) {
   return (
     <div className={cn("h-screen pb-12", className)}>
       <div className="space-y-4 py-4">
+        <div className="px-4 py-2">
+          <h2 className="mb-2 px-2 text-lg font-semibold tracking-tight">
+            Github
+          </h2>
+          <div className="space-y-1">
+            <a
+                href="https://github.com/GHGHGHKO/Dalgona"
+                target="_blank" rel="noopener noreferrer"
+            >
+              <Button variant="ghost" size="sm" className="w-full justify-start">
+                <Code className="mr-2 h-4 w-4" />
+                Code
+              </Button >
+            </a>
+            <a
+                href="https://github.com/GHGHGHKO/Dalgona/wiki"
+                target="_blank" rel="noopener noreferrer"
+            >
+              <Button variant="ghost" size="sm" className="w-full justify-start">
+                <FileText className="mr-2 h-4 w-4" />
+                Wiki
+              </Button>
+            </a>
+            <a
+                href="https://github.com/GHGHGHKO/Dalgona/issues"
+                target="_blank" rel="noopener noreferrer"
+            >
+              <Button variant="ghost" size="sm" className="w-full justify-start">
+                <AlertCircleIcon className="mr-2 h-4 w-4" />
+                Issue
+              </Button>
+            </a>
+            <a
+                href="https://github.com/agmmnn/tauri-ui"
+                target="_blank" rel="noopener noreferrer"
+            >
+              <Button variant="ghost" size="sm" className="w-full justify-start">
+                <LayoutTemplateIcon className="mr-2 h-4 w-4" />
+                Template
+              </Button>
+            </a>
+          </div>
+        </div>
         <div className="py-2">
           <h2 className="relative px-6 text-lg font-semibold tracking-tight">
             I'll make it someday..
