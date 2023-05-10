@@ -2,7 +2,7 @@
   "name": "dalgona",
   "private": true,
   "license": "MIT",
-  "version": "0.1.2",
+  "version": "0.3.1",
   "scripts": {
     "dev": "next dev -p 1420",
     "build": "next build",
