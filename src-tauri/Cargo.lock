@@ -421,6 +421,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "dalgona"
+version = "0.1.2"
+dependencies = [
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tokio",
+]
+
+[[package]]
 name = "darling"
 version = "0.13.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2867,18 +2879,6 @@ dependencies = [
  "webview2-com",
  "windows 0.44.0",
  "wry",
-]
-
-[[package]]
-name = "tauri-ui"
-version = "0.1.2"
-dependencies = [
- "reqwest",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tokio",
 ]
 
 [[package]]
