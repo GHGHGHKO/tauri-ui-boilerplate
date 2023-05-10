@@ -1,4 +1,5 @@
-![tauri-ui](https://user-images.githubusercontent.com/16024979/235379115-e5d9928b-6efe-4b6e-bd6e-66cfe718c829.png)
+# Dalgona UI
+![Animation-v3](https://github.com/GHGHGHKO/Dalgona/assets/26823834/fa93cd0c-de46-4bfc-818b-ab98cd4b95df)
 
 # Tauri UI Template
 
