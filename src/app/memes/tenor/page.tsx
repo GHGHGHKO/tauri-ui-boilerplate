@@ -53,6 +53,17 @@ export default function TenorPage() {
                       <h2 className="text-2xl font-semibold tracking-tight">
                         Get memes
                       </h2>
+                      <h2 className="text-l font-semibold tracking-tight">
+                        You must have a Tenor API key!{" "}
+                        <a
+                            href="https://developers.google.com/tenor/guides/quickstart#setup"
+                            className="font-medium text-primary underline underline-offset-4"
+                            target="_blank" rel="noopener noreferrer"
+                        >
+                          Click here
+                        </a>
+                        {" "}to get one.
+                      </h2>
                       <p className="text-sm text-muted-foreground">
                         Enter your Tenor Key and keyword
                       </p>
