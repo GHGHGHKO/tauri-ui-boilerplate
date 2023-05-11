@@ -40,10 +40,17 @@ export function TenorGifs({
     setIsCopied(true)
   };
 
-  const handleClick = (url: string) => {
-    const fileName = url.split('/').pop();
-    saveAs(url, fileName);
-  }
+  const handleClick = async (url: string) => {
+    try {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const fileName = url.split('/').pop();
+      saveAs(blob, fileName);
+    } catch (error) {
+      console.error("Error downloading GIF:", error);
+    }
+  };
+
   return (
     <div className={cn("space-y-3", className)} {...props}>
       <ContextMenu>
