@@ -2,6 +2,7 @@
 1. You must have a Tenor API key! [Click here](https://developers.google.com/tenor/guides/quickstart#setup) to get one.
 2. Install! https://github.com/GHGHGHKO/Dalgona/tags
 3. Insert keywords, key, and the desired number of GIFs!
+
 ![image](https://github.com/GHGHGHKO/Dalgona/assets/26823834/397eb97b-b9e8-4f17-8cf2-42aa0a534663)
 
 
