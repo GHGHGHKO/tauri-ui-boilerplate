@@ -53,7 +53,7 @@ export function Tenor() {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="search">Hit me with your best shot!!</Label>
-                <Input id="limit" type="text" placeholder="1~20"
+                <Input id="limit" type="text" placeholder="1~50"
                        onChange={(e) => setLimit(e.target.value)} />
               </div>
             </CardContent>
