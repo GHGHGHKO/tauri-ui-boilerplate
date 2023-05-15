@@ -19,7 +19,7 @@ pub struct MediaFormats {
 #[derive(Serialize, Deserialize)]
 pub struct GifFields {
     pub url: String,
-    pub duration: u32,
+    pub duration: f32,
     pub dims: Vec<u32>,
     pub size: u32
 }
