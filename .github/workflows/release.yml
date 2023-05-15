@@ -11,7 +11,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     outputs:
-      release_id: ${{ github.event.inputs.release_name }}
+      release_id: ${{ steps.create-release.outputs.result }}
 
     steps:
       - uses: actions/checkout@v3
@@ -63,7 +63,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          releaseId: ${{ github.event.inputs.release_name }}
+          releaseId: ${{ steps.create-release.outputs.result }}
 
   publish-release:
     permissions:
@@ -76,13 +76,13 @@ jobs:
         id: publish-release
         uses: actions/github-script@v6
         env:
-          release_id: ${{ github.event.inputs.release_name }}
+          release_id: ${{ steps.create-release.outputs.result }}
         with:
           script: |
             github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: `${{ github.event.inputs.release_name }}`,
+              release_id: process.env.release_id,
               draft: false,
               prerelease: false
             })
