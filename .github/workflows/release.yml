@@ -1,6 +1,10 @@
 name: "release"
 on:
   workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "Enter the tag name"
+        required: true
   push:
     tags:
       - "*"
