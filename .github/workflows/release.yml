@@ -32,8 +32,8 @@ jobs:
             const { data } = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              tag_name: `v${{ github.event.inputs.tag_name }}`,
-              name: `v${{ github.event.inputs.tag_name }}`,
+              tag_name: `${{ github.event.inputs.tag_name }}`,
+              name: `${{ github.event.inputs.tag_name }}`,
               body: '*This release was generated automatically using GitHub Actions.*',
               draft: true,
               prerelease: false
