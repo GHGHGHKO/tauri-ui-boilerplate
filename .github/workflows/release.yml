@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       tag_name:
-        description: "Enter the tag name"
+        description: "Enter the tag name ex] v0.3.2"
         required: true
   push:
     tags:
