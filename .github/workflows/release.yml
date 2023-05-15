@@ -82,7 +82,7 @@ jobs:
             github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: ${{ github.event.inputs.release_name }},
+              release_id: `${{ github.event.inputs.release_name }}`,
               draft: false,
               prerelease: false
             })
