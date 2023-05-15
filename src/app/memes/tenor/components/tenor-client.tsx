@@ -13,19 +13,43 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { TenorResults } from "@/app/memes/tenor/data/tenor-fields";
+import { TenorError } from "@/app/memes/tenor/data/tenor-error-fields";
 import { TenorGifs } from "@/app/memes/tenor/components/tenor-gifs";
 import { Separator } from "@/components/ui/separator";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle
+} from "@/components/ui/dialog";
 
 export function Tenor() {
+  const initialState: TenorError = {
+    error: {
+      code: '',
+      message: '',
+      status: '',
+    },
+  };
+
   const [results, setResults] = useState<TenorResults>({ results: [] })
+  const [errors, setError] = useState<TenorError>(initialState)
   const [query, setQuery] = useState("")
   const [key, setKey] = useState("")
   const [limit, setLimit] = useState("")
+  const [openDialog, setOpenDialog] = useState(false);
 
   // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
   async function tenor_call() {
-    setResults(await invoke("tenor_call", { query, key, limit }))
-    console.log(results);
+    try {
+      setResults(await invoke("tenor_call", {query, key, limit}));
+      console.log(results);
+    } catch (error) {
+      setError(error)
+      setOpenDialog(true);
+      console.log(errors, openDialog)
+    }
   }
 
   return (
@@ -57,9 +81,19 @@ export function Tenor() {
                        onChange={(e) => setLimit(e.target.value)} />
               </div>
             </CardContent>
-            <CardFooter>
-              <Button className="w-full" onClick={tenor_call}>Get Memes</Button>
-            </CardFooter>
+            <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+              <CardFooter>
+                <Button className="w-full" onClick={tenor_call}>Get Memes</Button>
+              </CardFooter>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Oops!</DialogTitle>
+                  <DialogDescription>
+                    {errors.error.message}
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
           </Card>
         </div>
         <div>
