@@ -1,10 +1,9 @@
 name: "release"
 on:
   workflow_dispatch:
-    inputs:
-      release_name:
-        description: "Enter the release name | ex)v0.3.1"
-        required: true
+  push:
+    tags:
+      - "*"
 jobs:
   create-release:
     permissions:
@@ -29,8 +28,8 @@ jobs:
             const { data } = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              tag_name: `${{ github.event.inputs.release_name }}`,
-              name: `${{ github.event.inputs.release_name }}`,
+              tag_name: `v${process.env.PACKAGE_VERSION}`,
+              name: `v${process.env.PACKAGE_VERSION}`,
               body: '*This release was generated automatically using GitHub Actions.*',
               draft: true,
               prerelease: false
@@ -44,7 +43,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, windows-latest]
+        platform: [macos-latest, windows-latest] # ubuntu-20.04
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -63,7 +62,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          releaseId: ${{ steps.create-release.outputs.result }}
+          releaseId: ${{ needs.create-release.outputs.release_id }}
 
   publish-release:
     permissions:
@@ -76,7 +75,7 @@ jobs:
         id: publish-release
         uses: actions/github-script@v6
         env:
-          release_id: ${{ steps.create-release.outputs.result }}
+          release_id: ${{ needs.create-release.outputs.release_id }}
         with:
           script: |
             github.rest.repos.updateRelease({
