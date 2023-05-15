@@ -63,7 +63,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          releaseId: ${{ github.event.inputs.release_name }}
+          releaseId: ${{ needs.create-release.outputs.release_id }}
 
   publish-release:
     permissions:
@@ -76,13 +76,13 @@ jobs:
         id: publish-release
         uses: actions/github-script@v6
         env:
-          release_id: ${{ github.event.inputs.release_name }}
+          release_id: ${{ needs.create-release.outputs.release_id }}
         with:
           script: |
             github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: `${{ github.event.inputs.release_name }}`,
+              release_id: `${{ needs.create-release.outputs.release_id }}`,
               draft: false,
               prerelease: false
             })
