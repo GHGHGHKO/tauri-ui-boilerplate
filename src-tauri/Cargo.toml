@@ -1,10 +1,10 @@
 [package]
 name = "dalgona"
-version = "0.1.2"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
+version = "0.5.3"
+description = "Get memes"
+authors = ["GHGHGHKO"]
+license = "https://github.com/GHGHGHKO/Dalgona/blob/master/LICENSE"
+repository = "https://github.com/GHGHGHKO/Dalgona"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
