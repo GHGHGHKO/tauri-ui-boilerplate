@@ -8,6 +8,7 @@ mod dto;
 mod client;
 
 use client::tenor_client::tenor_call;
+use client::get_github_latest_tag_client::github_latest_tag_client;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
@@ -20,7 +21,8 @@ async fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             greet,
-            tenor_call
+            tenor_call,
+            github_latest_tag_client
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
