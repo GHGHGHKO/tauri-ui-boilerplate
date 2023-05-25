@@ -422,7 +422,7 @@ dependencies = [
 
 [[package]]
 name = "dalgona"
-version = "0.5.3"
+version = "0.6.3"
 dependencies = [
  "reqwest",
  "serde",
