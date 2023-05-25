@@ -9,5 +9,6 @@ pub struct GithubLatestTag {
 #[derive(Serialize, Deserialize)]
 pub struct GithubLatestTagResult {
     pub is_latest: bool,
+    pub current_release: String,
     pub github_latest: GithubLatestTag,
 }
