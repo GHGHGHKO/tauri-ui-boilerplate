@@ -7,7 +7,10 @@ use crate::dto::github_latest_release_response::GithubLatestTagResult;
 #[tauri::command]
 pub async fn github_latest_tag_client()
     -> Result<GithubLatestTagResult, GithubErrorResponse> {
-    let version = env!("CARGO_PKG_VERSION");
+    let current_release = format!(
+        "v{version}",
+        version = env!("CARGO_PKG_VERSION").to_string()
+    );
     let authors = env!("CARGO_PKG_AUTHORS");
 
     let url = format!(
@@ -28,7 +31,7 @@ pub async fn github_latest_tag_client()
             let parsed: GithubLatestTag = response.json().await.unwrap();
             let is_latest: bool;
 
-            if parsed.tag_name == version {
+            if parsed.tag_name == current_release {
                 is_latest = true;
             } else {
                 is_latest = false;
@@ -36,6 +39,7 @@ pub async fn github_latest_tag_client()
 
             let result: GithubLatestTagResult = GithubLatestTagResult {
                 is_latest,
+                current_release,
                 github_latest: parsed
             };
 
