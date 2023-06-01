@@ -62,49 +62,50 @@ export function Tenor() {
   }
 
   return (
-      <form onSubmit={onFormSubmit}>
         <div className="flex-1 space-y-4">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <Card className={cn("w-[500px]")}>
-              <CardContent className="grid gap-4 p-1.5">
-                <div className="grid gap-2">
-                  <Label htmlFor="search">Let's toss some meme keywords, folks!</Label>
-                  <Input id="search" type="text" value={query}
-                         onChange={(e) => setQuery(e.target.value)} />
-                </div>
-                <div className="grid gap-2">
-                  <Label htmlFor="password">
-                    Where might my key be hiding, Gustaf?{" "}
-                    <a
-                        href="https://github.com/GHGHGHKO/tauri-get-memes/wiki/I-hate-key-input"
-                        className="font-medium text-primary underline underline-offset-4"
-                        target="_blank" rel="noopener noreferrer">
-                      I hate key input
-                    </a>
-                  </Label>
-                  <Input id="password" type="password" placeholder="xxxxxxACSKexUfqoKqSQxxxxxxh63zdC25ubpuA"
-                         onChange={(e) => setKey(e.target.value)} />
-                </div>
-                <div className="grid gap-2">
-                  <Label htmlFor="search">Hit me with your best shot!! (1~50)</Label>
-                  <Input id="limit" type="text" value={limit}
-                         onChange={(e) => setLimit(e.target.value)} />
-                </div>
-              </CardContent>
-              <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-                <CardFooter>
-                  <Button className="w-full">Get Memes</Button>
-                </CardFooter>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Oops!</DialogTitle>
-                    <DialogDescription>
-                      {errors.error.message}
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
-            </Card>
+            <form onSubmit={onFormSubmit}>
+              <Card className={cn("w-[500px]")}>
+                <CardContent className="grid gap-4 p-1.5">
+                  <div className="grid gap-2">
+                    <Label htmlFor="search">Let's toss some meme keywords, folks!</Label>
+                    <Input id="search" type="text" value={query}
+                           onChange={(e) => setQuery(e.target.value)} />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="password">
+                      Where might my key be hiding, Gustaf?{" "}
+                      <a
+                          href="https://github.com/GHGHGHKO/tauri-get-memes/wiki/I-hate-key-input"
+                          className="font-medium text-primary underline underline-offset-4"
+                          target="_blank" rel="noopener noreferrer">
+                        I hate key input
+                      </a>
+                    </Label>
+                    <Input id="password" type="password" placeholder="xxxxxxACSKexUfqoKqSQxxxxxxh63zdC25ubpuA"
+                           onChange={(e) => setKey(e.target.value)} />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="search">Hit me with your best shot!! (1~50)</Label>
+                    <Input id="limit" type="text" value={limit}
+                           onChange={(e) => setLimit(e.target.value)} />
+                  </div>
+                </CardContent>
+                <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+                  <CardFooter>
+                    <Button className="w-full">Get Memes</Button>
+                  </CardFooter>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Oops!</DialogTitle>
+                      <DialogDescription>
+                        {errors.error.message}
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
+              </Card>
+            </form>
           </div>
           <div>
             <Separator className="my-4" />
@@ -126,6 +127,5 @@ export function Tenor() {
             </div>
           </div>
         </div>
-      </form>
   )
 }
