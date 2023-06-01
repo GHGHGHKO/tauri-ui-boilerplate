@@ -35,9 +35,9 @@ export function Tenor() {
 
   const [results, setResults] = useState<TenorResults>({ results: [] })
   const [errors, setError] = useState<TenorError>(initialState)
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("welcome")
   const [key, setKey] = useState("")
-  const [limit, setLimit] = useState("")
+  const [limit, setLimit] = useState("50")
   const [openDialog, setOpenDialog] = useState(false);
 
   const onFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -69,7 +69,7 @@ export function Tenor() {
               <CardContent className="grid gap-4 p-1.5">
                 <div className="grid gap-2">
                   <Label htmlFor="search">Let's toss some meme keywords, folks!</Label>
-                  <Input id="search" type="text" placeholder="Fimally!"
+                  <Input id="search" type="text" value={query}
                          onChange={(e) => setQuery(e.target.value)} />
                 </div>
                 <div className="grid gap-2">
@@ -86,8 +86,8 @@ export function Tenor() {
                          onChange={(e) => setKey(e.target.value)} />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="search">Hit me with your best shot!!</Label>
-                  <Input id="limit" type="text" placeholder="1~50"
+                  <Label htmlFor="search">Hit me with your best shot!! (1~50)</Label>
+                  <Input id="limit" type="text" value={limit}
                          onChange={(e) => setLimit(e.target.value)} />
                 </div>
               </CardContent>
