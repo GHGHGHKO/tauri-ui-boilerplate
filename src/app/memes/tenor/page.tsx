@@ -4,8 +4,8 @@ import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { PodcastEmptyPlaceholder } from "./components/podcast-empty-placeholder"
-import { Sidebar } from "./components/sidebar"
-import { gifsList } from "./data/gifs-list"
+import { Sidebar } from "@/components/memes/sidebar"
+import { gifsList } from "@/components/memes/data/gifs-list"
 import "./styles.css"
 
 import {Tenor} from "@/app/memes/tenor/components/tenor-client";

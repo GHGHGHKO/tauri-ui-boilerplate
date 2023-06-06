@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
-import { GifsList } from "../data/gifs-list"
+import { GifsList } from "@/components/memes/data/gifs-list"
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
   gifs: GifsList[]
