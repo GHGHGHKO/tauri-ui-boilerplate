@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils"
 import { GifFields } from "@/app/memes/tenor/data/tenor-fields";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import { saveAs } from "file-saver";
 
 interface TenorGifsProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -23,10 +22,6 @@ export function TenorGifs({
   className,
   ...props
 }: TenorGifsProps) {
-  const [isCopied, setIsCopied] = useState(false);
-  const handleCopy = () => {
-    setIsCopied(true)
-  };
 
   const handleClick = (url: string) => {
     const fileName = url.split('/').pop();
@@ -50,8 +45,8 @@ export function TenorGifs({
         <Button onClick={() => handleClick(gifFields.url)} variant="secondary" className="shrink-0">
           Download Gif
         </Button>
-        <CopyToClipboard text={gifFields.url} onCopy={handleCopy}>
-          <Button onClick={handleCopy} variant="secondary" className="shrink-0">
+        <CopyToClipboard text={gifFields.url}>
+          <Button variant="secondary" className="shrink-0">
             Copy Link
           </Button>
         </CopyToClipboard>
