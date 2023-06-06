@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { invoke } from "@tauri-apps/api/tauri"
-import {GithubLatestTagResults} from "@/app/memes/tenor/data/github-latest-tag-fields";
+import {GithubLatestTagResults} from "@/components/github/data/github-latest-tag-fields";
 import {Button} from "@/components/ui/button";
 import {ExternalLinkIcon} from "lucide-react";
 
