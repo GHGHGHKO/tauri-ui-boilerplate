@@ -8,11 +8,11 @@ import { Sidebar } from "@/components/memes/sidebar"
 import { gifsList } from "@/components/memes/data/gifs-list"
 import "./styles.css"
 
-import {Tenor} from "@/app/memes/tenor/components/tenor-client";
 import {GithubLatestTag} from "@/components/github/github-latest-tag";
+import {GiphyClient} from "@/app/memes/giphy/components/giphy-client";
 
 
-export default function TenorPage() {
+export default function GiphyPage() {
 
   return (
     <div>
@@ -22,10 +22,10 @@ export default function TenorPage() {
           <Sidebar gifs={gifsList} className="hidden lg:block" />
           <div className="col-span-3 lg:col-span-4 lg:border-l">
             <div className="h-full px-4 py-6 lg:px-8">
-              <Tabs defaultValue="tenor" className="h-full space-y-6">
+              <Tabs defaultValue="gipfy" className="h-full space-y-6">
                 <div className="space-between flex items-center">
                   <TabsList>
-                    <TabsTrigger value="tenor" className="relative">
+                    <TabsTrigger value="gipfy" className="relative">
                       Giphy Gifs
                     </TabsTrigger>
                     <TabsTrigger value="podcasts">Coming soon</TabsTrigger>
@@ -36,7 +36,7 @@ export default function TenorPage() {
                   <GithubLatestTag />
                 </div>
                 <TabsContent
-                  value="tenor"
+                  value="gipfy"
                   className="border-none p-0 outline-none"
                 >
                   <div className="flex items-center justify-between">
@@ -45,9 +45,9 @@ export default function TenorPage() {
                         Get memes
                       </h2>
                       <h2 className="text-l font-semibold tracking-tight">
-                        You must have a Tenor API key!{" "}
+                        You must have a Giphy API key!{" "}
                         <a
-                            href="https://developers.google.com/tenor/guides/quickstart#setup"
+                            href="https://developers.giphy.com/"
                             className="font-medium text-primary underline underline-offset-4"
                             target="_blank" rel="noopener noreferrer"
                         >
@@ -56,12 +56,12 @@ export default function TenorPage() {
                         {" "}to get one.
                       </h2>
                       <p className="text-sm text-muted-foreground">
-                        Enter your Tenor Key and keyword
+                        Enter your Giphy Key and keyword
                       </p>
                     </div>
                   </div>
                   <Separator className="my-4" />
-                  <Tenor />
+                  <GiphyClient />
                 </TabsContent>
                 <TabsContent
                   value="podcasts"
