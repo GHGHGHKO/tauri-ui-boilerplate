@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { TenorResults } from "@/app/memes/tenor/data/tenor-fields";
-import { TenorError } from "@/components/github/data/tenor-error-fields";
+import { TenorError } from "@/components/memes/data/tenor-error-fields";
 import { TenorGifs } from "@/app/memes/tenor/components/tenor-gifs";
 import { Separator } from "@/components/ui/separator";
 import {
