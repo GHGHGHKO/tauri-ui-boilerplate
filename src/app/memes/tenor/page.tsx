@@ -10,8 +10,6 @@ import "./styles.css"
 
 import {Tenor} from "@/app/memes/tenor/components/tenor-client";
 import {GithubLatestTag} from "@/components/github/github-latest-tag";
-
-
 export default function TenorPage() {
 
   return (
