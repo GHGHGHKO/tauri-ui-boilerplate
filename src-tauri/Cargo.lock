@@ -424,6 +424,7 @@ dependencies = [
 name = "dalgona"
 version = "0.7.5"
 dependencies = [
+ "rand 0.8.5",
  "reqwest",
  "serde",
  "serde_json",
