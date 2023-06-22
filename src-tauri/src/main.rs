@@ -10,6 +10,7 @@ mod client;
 use client::tenor_client::tenor_call;
 use client::get_github_latest_tag_client::github_latest_tag_client;
 use client::giphy_client::giphy_call;
+use dotenv::dotenv;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
@@ -19,6 +20,8 @@ fn greet(name: &str) -> String {
 
 #[tokio::main]
 async fn main() {
+    dotenv().ok();
+
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             greet,
