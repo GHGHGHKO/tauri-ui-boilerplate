@@ -73,19 +73,6 @@ export function Tenor() {
                            onChange={(e) => setQuery(e.target.value)} />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="password">
-                      Where might my key be hiding, Gustaf?{" "}
-                      <a
-                          href="https://github.com/GHGHGHKO/tauri-get-memes/wiki/I-hate-key-input"
-                          className="font-medium text-primary underline underline-offset-4"
-                          target="_blank" rel="noopener noreferrer">
-                        I hate key input
-                      </a>
-                    </Label>
-                    <Input id="password" type="password" placeholder="xxxxxxACSKexUfqoKqSQxxxxxxh63zdC25ubpuA"
-                           onChange={(e) => setKey(e.target.value)} />
-                  </div>
-                  <div className="grid gap-2">
                     <Label htmlFor="search">Hit me with your best shot!! (1~50)</Label>
                     <Input id="limit" type="text" value={limit}
                            onChange={(e) => setLimit(e.target.value)} />
