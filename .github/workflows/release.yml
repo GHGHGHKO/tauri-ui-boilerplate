@@ -65,6 +65,8 @@ jobs:
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
+          TENOR_API_KEY: ${{ secrets.TENOR_API_KEY }}
         with:
           releaseId: ${{ needs.create-release.outputs.release_id }}
 
