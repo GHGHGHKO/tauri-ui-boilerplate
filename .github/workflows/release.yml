@@ -56,6 +56,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: .env setting
+        run: |
+          echo "GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }}" >> .env
+          echo "TENOR_API_KEY=${{ secrets.TENOR_API_KEY }}" >> .env
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
       - name: Install pnpm
