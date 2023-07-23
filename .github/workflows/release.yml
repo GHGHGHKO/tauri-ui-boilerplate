@@ -75,6 +75,8 @@ jobs:
       - name: install frontend dependencies
         run: pnpm install # change this to npm, yarn or pnpm depending on which one you use
       - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           releaseId: ${{ needs.create-release.outputs.release_id }}
 
