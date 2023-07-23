@@ -55,7 +55,7 @@ jobs:
       - uses: flcdrg/replace-multiple-action@v1
         with:
           files: '**/*client.rs'
-          find: '[{ "find": "GITHUB_ACTIONS_WORKFLOW_TENOR_API_KEY", "replace": `${{ secrets.TENOR_API_KEY }}` }]'
+          find: '[{ "find": "GITHUB_ACTIONS_WORKFLOW_TENOR_API_KEY", "replace": ${{ secrets.TENOR_API_KEY }} }]'
       - name: setup node
         uses: actions/setup-node@v3
         with:
