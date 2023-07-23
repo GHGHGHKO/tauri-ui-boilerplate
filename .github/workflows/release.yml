@@ -52,10 +52,19 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
-      - uses: flcdrg/replace-multiple-action@v1
-        with:
-          files: '**/*client.rs'
-          find: '[{ "find": "GITHUB_ACTIONS_WORKFLOW_TENOR_API_KEY", "replace": "${{ secrets.TENOR_API_KEY }}" }]'
+      - name: Replace TENOR_API_KEY in tenor_client.rs (Linux)
+        if: matrix.os == 'macos-latest'
+        run: |
+          # Find and replace the placeholder in the tenor_client.rs file on MacOS
+          find . -name "tenor_client.rs" -type f -exec sed -i "s/GITHUB_ACTIONS_WORKFLOW_TENOR_API_KEY/`${{ secrets.TENOR_API_KEY }}`/g" {} +
+
+      - name: Replace TENOR_API_KEY in tenor_client.rs (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          # Find and replace the placeholder in the tenor_client.rs file on Windows using PowerShell
+          Get-ChildItem -Recurse -Filter "tenor_client.rs" | ForEach-Object {
+            (Get-Content $_.FullName).replace("GITHUB_ACTIONS_WORKFLOW_TENOR_API_KEY", `${{ secrets.TENOR_API_KEY }}`) | Set-Content $_.FullName
+          }
       - name: setup node
         uses: actions/setup-node@v3
         with:
