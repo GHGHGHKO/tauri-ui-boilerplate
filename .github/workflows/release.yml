@@ -52,12 +52,18 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
-      - name: Find and Replace TENOR_API_KEY
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "GITHUB_ACTIONS_WORKFLOW_TENOR_API_KEY"
-          replace: ${{ secrets.TENOR_API_KEY }}
-          include: "**/tenor_client.rs"
+      - name: Replace TENOR_API_KEY in tenor_client.rs (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          find . -name "tenor_client.rs" -type f -exec sed -i "s/GITHUB_ACTIONS_WORKFLOW_TENOR_API_KEY/`${{ secrets.TENOR_API_KEY }}`/g" {} +
+
+      - name: Replace TENOR_API_KEY in tenor_client.rs (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          Get-ChildItem -Recurse -Filter "tenor_client.rs" | ForEach-Object {
+            (Get-Content $_.FullName).replace("GITHUB_ACTIONS_WORKFLOW_TENOR_API_KEY", "`${{ secrets.TENOR_API_KEY }}`") | Set-Content $_.FullName
+          }
+          
       - name: setup node
         uses: actions/setup-node@v3
         with:
