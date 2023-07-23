@@ -56,10 +56,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: .env setting
-        run: |
-          echo "GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }}" >> .env
-          echo "TENOR_API_KEY=${{ secrets.TENOR_API_KEY }}" >> .env
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
       - name: Install pnpm
@@ -67,10 +63,6 @@ jobs:
       - name: install frontend dependencies
         run: pnpm install # change this to npm, yarn or pnpm depending on which one you use
       - uses: tauri-apps/tauri-action@v0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
-          TENOR_API_KEY: ${{ secrets.TENOR_API_KEY }}
         with:
           releaseId: ${{ needs.create-release.outputs.release_id }}
 
