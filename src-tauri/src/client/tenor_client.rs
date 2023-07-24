@@ -1,5 +1,3 @@
-use std::env;
-
 use reqwest::StatusCode;
 
 use crate::dto::tenor_error_response::Error;
