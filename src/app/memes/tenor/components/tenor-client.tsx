@@ -36,6 +36,7 @@ export function Tenor() {
   const [results, setResults] = useState<TenorResults>({ results: [] })
   const [errors, setError] = useState<TenorError>(initialState)
   const [query, setQuery] = useState("welcome")
+  const [key, setKey] = useState("")
   const [limit, setLimit] = useState("50")
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -51,7 +52,7 @@ export function Tenor() {
   // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
   async function tenor_call() {
     try {
-      setResults(await invoke("tenor_call", {query, limit}));
+      setResults(await invoke("tenor_call", {query, key, limit}));
       console.log(results);
     } catch (error) {
       setError(error)

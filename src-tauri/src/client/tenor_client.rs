@@ -1,3 +1,5 @@
+use std::env;
+
 use reqwest::StatusCode;
 
 use crate::dto::tenor_error_response::Error;
@@ -5,9 +7,10 @@ use crate::dto::tenor_error_response::TenorError;
 use crate::dto::tenor_response::TenorResults;
 
 #[tauri::command]
-pub async fn tenor_call(query: &str, limit: &str)
+pub async fn tenor_call(query: &str, key: &str, limit: &str)
     -> Result<TenorResults, TenorError> {
-    let tenor_key = "GITHUB_ACTIONS_WORKFLOW_TENOR_API_KEY";
+    let tenor_key = env::var("TENOR_API_KEY")
+        .unwrap_or_else(|_| String::from(key));
 
     let url = format!(
         "https://tenor.googleapis.com/v2/search?random=true&q={query}&key={key}&limit={limit}",
