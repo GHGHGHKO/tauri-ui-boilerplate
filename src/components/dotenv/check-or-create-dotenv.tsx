@@ -7,9 +7,6 @@ import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} fro
 
 export function CheckOrCreateDotenv() {
     const [hasDotEnv, setDotEnv] = useState(false);
-    const alertMessage =
-        hasDotEnv.valueOf();
-    console.log(alertMessage);
 
     async function check_or_create_dotenv() {
         setDotEnv(await invoke("check_or_create_dotenv"));
