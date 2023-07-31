@@ -10,6 +10,7 @@ import "./styles.css"
 
 import {GithubLatestTag} from "@/components/github/github-latest-tag";
 import {GiphyClient} from "@/app/memes/giphy/components/giphy-client";
+import {CheckOrCreateDotenv} from "@/components/dotenv/check-or-create-dotenv";
 
 
 export default function GiphyPage() {
@@ -34,6 +35,7 @@ export default function GiphyPage() {
                     </TabsTrigger>
                   </TabsList>
                   <GithubLatestTag />
+                  <CheckOrCreateDotenv />
                 </div>
                 <TabsContent
                   value="gipfy"
