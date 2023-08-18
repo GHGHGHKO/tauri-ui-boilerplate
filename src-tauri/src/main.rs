@@ -9,7 +9,6 @@ mod client;
 mod dotenv_file;
 
 use client::tenor_client::tenor_call;
-use client::get_github_latest_tag_client::github_latest_tag_client;
 use client::giphy_client::giphy_call;
 use dotenv_file::make_dotenv::check_or_create_dotenv;
 use dotenv::dotenv;
@@ -29,7 +28,6 @@ async fn main() {
             greet,
             check_or_create_dotenv,
             tenor_call,
-            github_latest_tag_client,
             giphy_call
         ])
         .run(tauri::generate_context!())
