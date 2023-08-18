@@ -3,8 +3,8 @@ name = "dalgona"
 version = "0.10.8"
 description = "Get memes"
 authors = ["GHGHGHKO"]
-license = "https://github.com/GHGHGHKO/Dalgona/blob/master/LICENSE"
-repository = "https://github.com/GHGHGHKO/Dalgona"
+license = "https://github.com/GHGHGHKO/dalgona/blob/master/LICENSE"
+repository = "https://github.com/GHGHGHKO/dalgona"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
