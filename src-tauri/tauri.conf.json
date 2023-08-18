@@ -58,7 +58,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://gist.githubusercontent.com/GHGHGHKO/4bea59c3231c2775047023505b24b659/raw/51a7c8521541ddc8661903019495468f98091d76/dalgona-update.json"
+        "https://gist.githubusercontent.com/GHGHGHKO/4bea59c3231c2775047023505b24b659/raw/9a466c18d44d1c460aa53d7c3dab969462aa0301/dalgona-update.json"
       ],
       "dialog": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNCRDYyRkJEMzU3REMzNTcKUldSWHczMDF2Uy9XT3oyT2syZXhCMnZQcTFuRW9yN0x0ZVZrQ2lBcWEySE9ML3pZN1NDTFY1Y3gK"
