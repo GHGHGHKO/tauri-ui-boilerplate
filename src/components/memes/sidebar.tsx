@@ -23,7 +23,7 @@ export function Sidebar({ className, gifs }: SidebarProps) {
           </h2>
           <div className="space-y-1">
             <a
-                href="https://github.com/GHGHGHKO/Dalgona"
+                href="https://github.com/GHGHGHKO/dalgona"
                 target="_blank" rel="noopener noreferrer"
             >
               <Button variant="ghost" size="sm" className="w-full justify-start">
@@ -32,7 +32,7 @@ export function Sidebar({ className, gifs }: SidebarProps) {
               </Button >
             </a>
             <a
-                href="https://github.com/GHGHGHKO/Dalgona/wiki"
+                href="https://github.com/GHGHGHKO/dalgona/wiki"
                 target="_blank" rel="noopener noreferrer"
             >
               <Button variant="ghost" size="sm" className="w-full justify-start">
@@ -41,7 +41,7 @@ export function Sidebar({ className, gifs }: SidebarProps) {
               </Button>
             </a>
             <a
-                href="https://github.com/GHGHGHKO/Dalgona/issues"
+                href="https://github.com/GHGHGHKO/dalgona/issues"
                 target="_blank" rel="noopener noreferrer"
             >
               <Button variant="ghost" size="sm" className="w-full justify-start">

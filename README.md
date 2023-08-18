@@ -1,10 +1,10 @@
 # How to use
 1. You must have a Tenor API key! [Click here](https://developers.google.com/tenor/guides/quickstart#setup) to get one.
-2. Install! https://github.com/GHGHGHKO/Dalgona/tags
+2. Install! https://github.com/GHGHGHKO/dalgona/tags
 3. Insert keywords, key, and the desired number of GIFs!
 
-# Dalgona UI
-![Animation-v3](https://github.com/GHGHGHKO/Dalgona/assets/26823834/fa93cd0c-de46-4bfc-818b-ab98cd4b95df)
+# dalgona UI
+![Animation-v3](https://github.com/GHGHGHKO/dalgona/assets/26823834/fa93cd0c-de46-4bfc-818b-ab98cd4b95df)
 
 # Tauri UI Template
 
