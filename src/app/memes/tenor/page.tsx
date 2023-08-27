@@ -9,6 +9,7 @@ import { gifsList } from "@/components/memes/data/gifs-list"
 import "./styles.css"
 
 import {Tenor} from "@/app/memes/tenor/components/tenor-client";
+import {GithubLatestTag} from "@/components/github/github-latest-tag";
 import {CheckOrCreateDotenv} from "@/components/dotenv/check-or-create-dotenv";
 export default function TenorPage() {
 
@@ -31,6 +32,7 @@ export default function TenorPage() {
                       Coming soon
                     </TabsTrigger>
                   </TabsList>
+                  <GithubLatestTag />
                   <CheckOrCreateDotenv />
                 </div>
                 <TabsContent
