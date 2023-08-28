@@ -26,8 +26,8 @@ Tauri UI Template is a starting point for building modern desktop applications w
 ## Getting Started
 
 ```
-gh repo clone agmmnn/tauri-ui
-cd tauri-ui
+gh repo clone GHGHGHKO/dalgona
+cd dalgona
 pnpm i
 ```
 
@@ -36,16 +36,23 @@ pnpm tauri dev
 pnpm tauri build
 ```
 
-![tauri-ui](https://user-images.githubusercontent.com/16024979/232823230-19d22434-8e28-43c2-bb70-e45a2fc2da88.gif)
+### Set environments
+TENOR : `TENOR_API_KEY`  
+GIPHY : `GIPHY_API_KEY`
 
-## Customization
+**PowerShell**
+```shell
+[Environment]::SetEnvironmentVariable(TENOR_API_KEY, "Insert your Tenor Key", "User")
+```
 
-The template can be customized by editing the following files:
+**macOS**
+```shell
+launchctl setenv TENOR_API_KEY "Insert your Tenor Key"
+```
 
-- [src-tauri/tauri.conf.json](src-tauri/tauri.conf.json)
-- [package.json](/package.json)
-- [src-tauri/cargo.toml](src-tauri/Cargo.toml)
-- To change the app icon, update `app-icon.png`, and then run `pnpm tauri icon`. This will automatically generate icon files into _src-tauri/icons_.
+
+## Wiki
+https://github.com/GHGHGHKO/dalgona/wiki
 
 ## Update Components
 
@@ -53,12 +60,11 @@ Note that **shadcn/ui** [is not a library](https://ui.shadcn.com/docs#faqs), the
 
 ## To-Do
 
-- [x] Titlebar draggable.
-- [x] Titlebar minimize, maximize, close buttons.
-- [x] Titlebar double-click maximize.
-- [x] Decomposing UI into components.
-- [x] Dark-Light mode switch.
-- [x] Get simple data from the Rust backend code.
+- [x] TENOR API
+- [x] GIPHY API
+- [ ] IMGUR API
+- [ ] Gfycat API
+- [ ] Updater
 
 ## Folder Structure
 
@@ -93,4 +99,4 @@ Note that **shadcn/ui** [is not a library](https://ui.shadcn.com/docs#faqs), the
 
 ## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- [VS Code](https://code.visualstudio.com/) or [Jetbrains IntelliJ](https://www.jetbrains.com/ko-kr/idea/download/?section=windows) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
