@@ -1,40 +1,11 @@
-# How to use
-1. You must have a Tenor API key! [Click here](https://developers.google.com/tenor/guides/quickstart#setup) to get one.
-2. Install! https://github.com/GHGHGHKO/dalgona/tags
-3. Insert keywords, key, and the desired number of GIFs!
-
 # dalgona UI
 ![Animation-v3](https://github.com/GHGHGHKO/dalgona/assets/26823834/fa93cd0c-de46-4bfc-818b-ab98cd4b95df)
 
-# Tauri UI Template
-
-Tauri UI Template is a starting point for building modern desktop applications with web technologies. Customizable UI components with [shadcn/ui](https://github.com/shadcn/ui), a lightweight and secure desktop app framework [Tauri 2](https://github.com/tauri-apps/tauri), the React-based framework [Next.js 13](https://beta.nextjs.org/docs), the utility-first CSS framework [Tailwind](https://tailwindcss.com/).
-
-- Support for dark and light modes
-- Components-based UI design
-- A draggable titlebar with minimize, maximize, and close buttons
-- [Radix UI](https://www.radix-ui.com/) for UI primitives
-- [TypeScript](https://www.typescriptlang.org/)
-- [Lucide Icons](https://lucide.dev/)
-- [Bundle size optimized](https://github.com/johnthagen/min-sized-rust) [`Cargo.toml`](/src-tauri/Cargo.toml) (.exe 3mb, .msi 2mb)
-- [Tauri GitHub Action](https://github.com/tauri-apps/tauri-action)
-
-> _You can download pre-built final bundles from the [Releases](https://github.com/agmmnn/tauri-ui/releases) section._
-
-> _[Next.js](https://nextjs.org/) is used in this template to facilitate quick integration of the [`/examples`](https://github.com/shadcn/ui/tree/main/apps/www/app/examples) directory of shadcn/ui. You can also easily use shadcn/ui with the [React + Vite](https://tauri.app/v1/guides/getting-started/setup/vite/) stack and any [React router](https://react.libhunt.com/libs/router) library in Tauri._
-
 ## Getting Started
 
-```
-gh repo clone GHGHGHKO/dalgona
-cd dalgona
-pnpm i
-```
-
-```
-pnpm tauri dev
-pnpm tauri build
-```
+1. You must have a Tenor API key! [Click here](https://developers.google.com/tenor/guides/quickstart#setup) to get one.
+2. Install! https://github.com/GHGHGHKO/dalgona/tags
+3. Insert keywords, key, and the desired number of GIFs!
 
 ### Set environments
 TENOR : `TENOR_API_KEY`  
@@ -50,21 +21,30 @@ GIPHY : `GIPHY_API_KEY`
 launchctl setenv TENOR_API_KEY "Insert your Tenor Key"
 ```
 
+### How to build
+
+```shell
+gh repo clone GHGHGHKO/dalgona
+cd dalgona
+pnpm i
+```
+
+```shell
+pnpm tauri dev
+pnpm tauri build
+```
+
 
 ## Wiki
 https://github.com/GHGHGHKO/dalgona/wiki
-
-## Update Components
-
-Note that **shadcn/ui** [is not a library](https://ui.shadcn.com/docs#faqs), therefore you will need to update the components manually. To do so, you can [download](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui%2Ftree%2Fmain%2Fapps%2Fwww%2Fcomponents%2Fui) the _[shadcn/ui/apps/www/components/ui](https://github.com/shadcn/ui/tree/main/apps/www/components/ui)_ directory and paste it into _[src/components/ui](/src/components/ui)_.
 
 ## To-Do
 
 - [x] TENOR API
 - [x] GIPHY API
+- [x] Updater
 - [ ] IMGUR API
 - [ ] Gfycat API
-- [ ] Updater
 
 ## Folder Structure
 
