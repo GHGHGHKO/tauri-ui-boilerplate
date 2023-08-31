@@ -86,6 +86,10 @@ export function Sidebar({ className, gifs }: SidebarProps) {
             I'll make it someday..
           </h2>
           <ScrollArea className="h-[1000px] px-2">
+            <a
+                href="https://github.com/GHGHGHKO/dalgona/issues"
+                target="_blank" rel="noopener noreferrer"
+            >
             <div className="space-y-1 p-2">
               {gifs?.map((gif) => (
                 <Button
@@ -99,6 +103,7 @@ export function Sidebar({ className, gifs }: SidebarProps) {
                 </Button>
               ))}
             </div>
+            </a>
           </ScrollArea>
         </div>
       </div>
