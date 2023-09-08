@@ -1,6 +1,6 @@
 [package]
 name = "dalgona"
-version = "0.11.9"
+version = "0.12.9"
 description = "Get memes"
 authors = ["GHGHGHKO"]
 license = "https://github.com/GHGHGHKO/dalgona/blob/master/LICENSE"
