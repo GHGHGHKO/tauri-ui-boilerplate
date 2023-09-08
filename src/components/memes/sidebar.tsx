@@ -80,14 +80,6 @@ export function Sidebar({ className, gifs }: SidebarProps) {
               </Button >
             </a>
           </div>
-          <div className="space-y-1">
-            <a href="/memes/gfycat" key="Giphy">
-              <Button variant="ghost" size="sm" className="w-full justify-start">
-                <Code className="mr-2 h-4 w-4" />
-                Gfycat
-              </Button >
-            </a>
-          </div>
         </div>
         <div className="py-2">
           <h2 className="relative px-6 text-lg font-semibold tracking-tight">
