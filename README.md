@@ -43,7 +43,6 @@ https://github.com/GHGHGHKO/dalgona/wiki
 - [x] TENOR API
 - [x] GIPHY API
 - [x] Updater  
-- [ ] Gfycat API
 
 ## Folder Structure
 
