@@ -460,7 +460,7 @@ dependencies = [
 
 [[package]]
 name = "dalgona"
-version = "0.11.9"
+version = "0.12.9"
 dependencies = [
  "dotenv",
  "rand 0.8.5",
