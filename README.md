@@ -1,4 +1,9 @@
 # dalgona UI
+[![Mentioned in Awesome Tauri][]][1]
+
+[1]: https://github.com/tauri-apps/awesome-tauri#productivity
+[Mentioned in Awesome Tauri]: https://awesome.re/mentioned-badge.svg
+
 ![Animation-v3](https://github.com/GHGHGHKO/dalgona/assets/26823834/fa93cd0c-de46-4bfc-818b-ab98cd4b95df)
 
 ## Getting Started
