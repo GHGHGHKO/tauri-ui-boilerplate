@@ -43,7 +43,7 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tauri-apps/api": "2.0.0-alpha.3",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
     "date-fns": "^2.30.0",
     "file-saver": "^2.0.5",
