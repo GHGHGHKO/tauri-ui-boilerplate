@@ -47,7 +47,7 @@
     "cmdk": "^0.2.0",
     "date-fns": "^2.30.0",
     "file-saver": "^2.0.5",
-    "lucide-react": "^0.279.0",
+    "lucide-react": "^0.292.0",
     "nanoid": "^4.0.2",
     "next": "^13.4.1",
     "next-themes": "^0.2.1",
